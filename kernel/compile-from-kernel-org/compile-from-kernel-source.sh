@@ -22,4 +22,23 @@ cp /boot/config-`uname -r` .config
 make menuconfig
 
 make -j 3
+sudo make modules_install
+sudo make install
 
+cd /boot
+# initrd images contains device driver which needed to load rest of the operating system later on. Not all computer requires initrd, but it is safe to create one.
+mkinitinitramfs -o initrd.img-3.17.6RC1 3.17.6RC1
+
+# edit /etc/grub.d/40_custom
+
+uname -a
+uname -s # Produces the name of the kernel which is normally linux 
+# equals
+# cat /proc/sys/kernel/ostype
+uname -n # nodename, display the network hostname
+uname -r # displays the kernel release number
+uname -m # machine type
+uname -p # cpu tyoe
+uname -o # operaating system
+uname -v # kernel version
+# cat /proc/sys/kernel/version
