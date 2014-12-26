@@ -1,0 +1,12 @@
+[Unit]
+Description=A unit file for experimenting with Statsd
+
+[Service]
+Type=forking
+ExecStartPre=/bin/echo "Test Unit Starting"
+ExecStart=/lib/systemd/scripts/testjobadvanced start
+ExecStop=/lib/systemd/scripts/testjobadvanced stop
+ExecStopPost=/bin/echo "Test Unit Stopping"
+
+[Install]
+WantedBy=multi-user.target
