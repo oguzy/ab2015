@@ -21,6 +21,7 @@ make mrproper
 cp /boot/config-`uname -r` .config
 make menuconfig
 
+# number of processor cores
 make -j 3
 sudo make modules_install
 sudo make install

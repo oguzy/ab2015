@@ -118,3 +118,4 @@ nagios.cfg -> debug_level
 commands.cfg -> from address, new custom command for nrpe
 cgi.cfg -> refresh_rate
 
+/etc/nagios-plugins/config/check_nrpe.cfg
