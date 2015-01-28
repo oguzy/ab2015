@@ -33,6 +33,9 @@ systemctl status ssh
 # checking the log message of a unit
 sudo journalctl -u ssh
 
+# tail -f
+sudo journalctl -f -u ssh
+
 # the sshd is still running, that is because of the ESTABLISHED connection
 sudo ps -efl | grep ssh
 
