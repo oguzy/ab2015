@@ -1,0 +1,24 @@
+#! /bin/sh
+# /etc/init.d/foo
+#
+
+# Some things that run always
+touch /var/lock/foo
+
+# Carry out specific functions when asked to by the system
+case "$1" in
+  start)
+    echo "Starting script foo " >> /home/oguz/test.log
+    echo "Could do more here" >> /home/oguz/test.log
+    ;;
+  stop)
+    echo "Stopping script foo"
+    echo "Could do more here"
+    ;;
+  *)
+    echo "Usage: /etc/init.d/foo {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0
